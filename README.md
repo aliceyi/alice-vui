@@ -27,3 +27,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### 自动引入全局组件
+### 自动引入路由
+### store 按照组分 modules 
+### common js 使用 cdn
+### axios 封装
+

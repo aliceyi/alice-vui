@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <% if (process.env.NODE_ENV === 'production') { %>
+    <% for(var css of htmlWebpackPlugin.options.cdn.css) {%>
+    <link rel="preload" as="style" href="<%=css%>">
+    <link rel="stylesheet" as="style" href="<%=css%>">
+    <% } %>
+    <% for(var js of htmlWebpackPlugin.options.cdn.js) {%>
+    <link rel="preload" as="script" href="<%=js%>">
+    <script src="<%=js%>"></script>
+    <% } %>
+    <% } %>
     <title>alice-vui</title>
   </head>
   <body>
